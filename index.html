@@ -4,20 +4,20 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Kushal Sai Singh — Senior Frontend Engineer</title>
-<meta name="description" content="Kushal Sai Singh — Senior Frontend Engineer with 4+ years building scalable React, TypeScript, and Redux applications in SaaS and Fintech. Hyderabad / Remote." />
+<meta name="description" content="Kushal Sai Singh — Senior Frontend Engineer with 4.5+ years building scalable React, TypeScript, Next.js and Redux applications in Fintech, Payments and SaaS. Hyderabad / Remote." />
 <meta name="author" content="Kushal Sai Singh" />
 <meta name="theme-color" content="#0B0B0F" />
 
 <!-- Open Graph / social -->
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Kushal Sai Singh — Senior Frontend Engineer" />
-<meta property="og:description" content="React · TypeScript · Redux. 4+ years shipping production SaaS & Fintech interfaces. Cut build times ~75%, dev effort ~30%." />
+<meta property="og:description" content="React · TypeScript · Next.js · Redux. 4.5+ years shipping production Fintech & SaaS interfaces. Build time 4 min→&lt;1 min, cold start ~45s→&lt;10s." />
 <meta property="og:image" content="og.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Kushal Sai Singh — Senior Frontend Engineer" />
-<meta name="twitter:description" content="React · TypeScript · Redux. 4+ years in SaaS & Fintech." />
+<meta name="twitter:description" content="React · TypeScript · Next.js. 4.5+ years in Fintech & SaaS." />
 <meta name="twitter:image" content="og.png" />
 
 <!-- Favicon (inline SVG: lime K on dark) -->
@@ -414,6 +414,7 @@
     .project.third { grid-column: span 6; }
     .stack-grid { grid-template-columns: repeat(2, 1fr); }
     .exp-bullets { grid-template-columns: 1fr; }
+    .snapshot { width: 100%; max-width: 360px; }
   }
 
   /* Mobile ≤ 768px */
@@ -438,6 +439,18 @@
     .available { margin-bottom: 20px; font-size: 11px; }
     .lede { font-size: 16px; }
     .hero-meta { gap: 18px; }
+    .snapshot { width: 100%; max-width: 100%; padding: 18px 20px; }
+    .snap-row { padding: 11px 0; gap: 12px; }
+    .snap-k { flex: 0 0 68px; font-size: 10px; }
+    .snap-v { font-size: 13px; }
+
+    /* Glance strip */
+    .glance { grid-template-columns: repeat(2, 1fr); }
+    .glance > div { padding: 24px 18px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .glance > div:nth-child(2n) { border-right: 0; }
+    .glance > div:nth-last-child(-n+2) { border-bottom: 0; }
+    .glance .v { font-size: 32px; }
+    .glance .l { font-size: 12px; margin-top: 8px; }
 
     /* Marquee */
     .marquee { padding: 16px 0; }
@@ -447,15 +460,22 @@
     /* Section heads */
     .sec-head { flex-direction: column; align-items: flex-start; gap: 16px; margin-bottom: 36px; }
     .sec-aside { max-width: none; }
-    .sec-title { font-size: clamp(32px, 7vw, 44px); }
 
     /* Projects */
     .projects { gap: 16px; }
-    .project { padding: 22px; border-radius: 18px; min-height: 0 !important; }
+    .project { padding: 22px; border-radius: 18px; min-height: 0 !important; overflow: hidden; }
     .project,
     .project.large, .project.medium, .project.half, .project.third { grid-column: span 12 !important; min-height: 0; }
     .project h3 { font-size: 24px; }
-    .viz { display: none; } /* hide decorative visuals — they clutter on small screens */
+    .project [style*="grid-template-columns:1fr 1fr"],
+    .project [style*="grid-template-columns: 1fr 1fr"] { grid-template-columns: 1fr !important; gap: 20px !important; }
+    .project .stat-big[style*="font-size:64px"],
+    .project .stat-big[style*="font-size: 64px"] { font-size: 48px !important; }
+    .viz { display: none; }
+
+    /* Section titles wrap cleanly */
+    .sec-title { font-size: clamp(28px, 7.6vw, 44px); word-wrap: break-word; overflow-wrap: break-word; max-width: 100%; }
+    .contact h2 { word-wrap: break-word; overflow-wrap: break-word; }
 
     /* Experience */
     .exp-row { grid-template-columns: 1fr; gap: 12px; padding: 24px 0; }
@@ -496,6 +516,13 @@
     .avatar-card { width: 100%; max-width: 220px; aspect-ratio: 1/1; }
     .avatar-mono { font-size: 140px; }
     .hero-meta { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .snapshot { width: 100%; padding: 16px 18px; }
+    .snap-row { padding: 10px 0; }
+    .snap-k { flex: 0 0 60px; font-size: 9.5px; }
+    .snap-v { font-size: 12.5px; }
+    .glance { grid-template-columns: 1fr; }
+    .glance > div { border-right: 0 !important; border-bottom: 1px solid var(--line); }
+    .glance > div:last-child { border-bottom: 0; }
     .marquee-item { font-size: 17px; }
     .marquee-item .star { font-size: 13px; }
     .metrics { grid-template-columns: 1fr; }
@@ -530,7 +557,7 @@
       <a href="#stack">Stack</a>
       <a href="#contact">Contact</a>
     </div>
-    <a href="/cdn-cgi/l/email-protection#13783d7866607b727f607a7d747b2327232653747e727a7f3d707c7e" class="nav-cta">
+    <a href="mailto:k.kushalsingh0405@gmail.com" class="nav-cta">
       Let's talk
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
     </a>
@@ -552,7 +579,7 @@
           interfaces.<span class="blink" style="color:var(--accent)">_</span>
         </h1>
         <p class="lede">
-          Senior Frontend Engineer with <b>4+ years</b> shipping production-grade SaaS and Fintech apps. I obsess over <b>performance, component architecture, and Redux state design</b> &mdash; and I've shipped products that cut build times by 75% and feature dev effort by 30%.
+          Senior Frontend Engineer with <b>4.5+ years</b> shipping production-grade Fintech, payments &amp; SaaS apps in React, TypeScript and Next.js. Cut build time from <b>~4 min to &lt; 1 min</b>, cold start <b>~45s to &lt; 10s</b>, and reduced unnecessary re-renders by <b>~40%</b> via memoisation and code-splitting.
         </p>
         <div class="hero-meta">
           <div class="meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Hyderabad, India</div>
@@ -563,9 +590,9 @@
       <div class="hero-ports">
         <div class="snapshot">
           <div class="snap-row"><span class="snap-k">// NOW</span><span class="snap-v">Sr. Frontend, Coderower</span></div>
-          <div class="snap-row"><span class="snap-k">// FOCUS</span><span class="snap-v">React / TS / Redux / Perf</span></div>
-          <div class="snap-row"><span class="snap-k">// BASED</span><span class="snap-v">Hyderabad → Remote</span></div>
-          <div class="snap-row last"><span class="snap-k">// SINCE</span><span class="snap-v">2021 — 4 yrs shipping</span></div>
+          <div class="snap-row"><span class="snap-k">// FOCUS</span><span class="snap-v">React / Next.js / TS / Perf</span></div>
+          <div class="snap-row"><span class="snap-k">// BASED</span><span class="snap-v">Hyderabad</span></div>
+          <div class="snap-row last"><span class="snap-k">// SINCE</span><span class="snap-v">2021 — 4.5 yrs shipping</span></div>
         </div>
       </div>
     </div>
@@ -576,8 +603,8 @@
 <div class="glance">
   <div><div class="v">5<span class="accent">+</span></div><div class="l">Production apps<br/>shipped end-to-end</div></div>
   <div><div class="v"><span class="accent">~75</span><span style="font-size:.55em">%</span></div><div class="l">Faster CI builds<br/>after Vite migration</div></div>
-  <div><div class="v"><span class="accent">~30</span><span style="font-size:.55em">%</span></div><div class="l">Less feature dev effort<br/>via component library</div></div>
-  <div><div class="v">1K<span class="accent">+</span></div><div class="l">Daily payment events<br/>powered by my dashboards</div></div>
+  <div><div class="v"><span class="accent">~40</span><span style="font-size:.55em">%</span></div><div class="l">Fewer re-renders<br/>via memoisation &amp; hooks</div></div>
+  <div><div class="v">1.2K<span class="accent">+</span></div><div class="l">Daily payment events<br/>powered by my dashboards</div></div>
 </div>
 
 <!-- ============ Marquee ============ -->
@@ -585,21 +612,27 @@
   <div class="marquee-track">
     <span class="marquee-item">React</span>
     <span class="marquee-item">TypeScript</span>
-    <span class="marquee-item">Redux Toolkit</span>
     <span class="marquee-item">Next.js</span>
+    <span class="marquee-item">Redux Toolkit</span>
     <span class="marquee-item">Vite</span>
     <span class="marquee-item">Tailwind</span>
     <span class="marquee-item">Playwright</span>
+    <span class="marquee-item">Jest</span>
+    <span class="marquee-item">Storybook</span>
+    <span class="marquee-item">GitHub Actions</span>
     <span class="marquee-item">Firebase</span>
     <span class="marquee-item">Material UI</span>
     <!-- dup for seamless loop -->
     <span class="marquee-item">React</span>
     <span class="marquee-item">TypeScript</span>
-    <span class="marquee-item">Redux Toolkit</span>
     <span class="marquee-item">Next.js</span>
+    <span class="marquee-item">Redux Toolkit</span>
     <span class="marquee-item">Vite</span>
     <span class="marquee-item">Tailwind</span>
     <span class="marquee-item">Playwright</span>
+    <span class="marquee-item">Jest</span>
+    <span class="marquee-item">Storybook</span>
+    <span class="marquee-item">GitHub Actions</span>
     <span class="marquee-item">Firebase</span>
     <span class="marquee-item">Material UI</span>
   </div>
@@ -628,9 +661,9 @@
         </div>
         <p>Product-onboarding platform letting non-technical teams design in-app tours, tooltips, and banners — no engineering required.</p>
         <ul class="project-bullets">
-          <li><span>Built <b>dynamic tour, tooltip, and banner systems</b> — eliminating eng dependency for onboarding launches.</span></li>
-          <li><span>Implemented multi-step interactive flows with <b>Redux Toolkit</b> handling branching logic across user segments.</span></li>
-          <li><span>Pixel-perfect components via Figma handoff, accessible and cross-browser tested.</span></li>
+          <li><span>Built no-code UI configuration for tours, tooltips and banners that <b>cut eng dependency by ~60%</b>, letting product teams ship onboarding independently.</span></li>
+          <li><span>Architected the <b>Demo Creation</b> feature with lazy-loaded bundles — <b>+25% activation</b> and <b>−35% initial bundle size</b>.</span></li>
+          <li><span>Managed multi-step overlay flows with <b>Redux Toolkit</b> + memoised hooks, keeping interaction response under <b>100ms</b>.</span></li>
         </ul>
         <div class="chips">
           <span class="chip">React</span><span class="chip">TypeScript</span><span class="chip">Redux Toolkit</span><span class="chip">SPA</span><span class="chip">Figma</span>
@@ -654,9 +687,9 @@
         </div>
         <p>Digital payment platform — real-time dashboards used by ops teams to monitor payment health 24/7.</p>
         <ul class="project-bullets">
-          <li><span>Built dashboard handling <b>1,000+ daily payment events</b> with optimistic UI updates.</span></li>
-          <li><span>Integrated third-party payment APIs with <b>secure, low-latency</b> transaction flow.</span></li>
-          <li><span>Optimised data-heavy rendering with memoisation — kept interactions smooth at high throughput.</span></li>
+          <li><span>Built real-time dashboards monitoring <b>1,200+ daily payment events</b> with <b>&lt; 2s refresh</b> via WebSocket integrations.</span></li>
+          <li><span>Integrated third-party payment APIs with optimistic UI — <b>−30%</b> perceived transaction latency.</span></li>
+          <li><span>Hit <b>85%+ unit-test coverage</b> on payment flows using Jest + React Testing Library.</span></li>
         </ul>
         <div class="chips">
           <span class="chip">React</span><span class="chip">TypeScript</span><span class="chip">Redux</span><span class="chip">REST</span>
@@ -686,8 +719,8 @@
         </div>
         <p>Mobile-first bill payments app — utility, mobile, and DTH recharges.</p>
         <ul class="project-bullets">
-          <li><span>Designed multi-step payment flows that <b>reduced drop-off</b> for recurring users.</span></li>
-          <li><span>Maintained reliable performance under high-frequency interactions via memoisation + lazy loading.</span></li>
+          <li><span>Built accessible multi-step payment flows with validation + error recovery — <b>−20% drop-off</b> on recurring users.</span></li>
+          <li><span>Maintained reliable UX under high-frequency interactions via memoisation, lazy loading and Suspense boundaries.</span></li>
         </ul>
         <div class="chips">
           <span class="chip">React</span><span class="chip">Redux</span><span class="chip">Firebase</span><span class="chip">RWD</span>
@@ -712,8 +745,8 @@
         </div>
         <p>Crypto mining application — real-time dashboards with live mining stats and earnings.</p>
         <ul class="project-bullets">
-          <li><span>Real-time dashboards via <b>Firebase listeners</b> with sub-second update latency.</span></li>
-          <li><span>Scalable, reusable UI components handling dynamic data without perf degradation.</span></li>
+          <li><span>Real-time dashboards on Firebase listeners supporting <b>500+ concurrent users</b> with live mining &amp; referral metrics.</span></li>
+          <li><span>Designed a reusable <b>Storybook</b> component library for dynamic data displays — <b>−15%</b> UI bug reports.</span></li>
         </ul>
         <div class="chips">
           <span class="chip">React</span><span class="chip">Redux</span><span class="chip">Firebase</span><span class="chip">Web Perf</span>
@@ -785,8 +818,9 @@
           <h3 class="exp-role">Sr. Frontend Developer</h3>
           <span class="exp-co">Coderower Software Pvt. Ltd.</span>
           <p style="color:var(--ink-dim);font-size:15px;line-height:1.6;margin:0;max-width:680px">
-            Owning the frontend on multiple SaaS &amp; Fintech products — from CRA→Vite migration to building reusable
-            component libraries across 4 production apps. Mentor juniors, lead reviews, and partner closely with UI/UX.
+            Owning the frontend on multiple Fintech &amp; SaaS products across <b>4.5 years</b> &mdash; from CRA→Vite migration to designing
+            reusable component libraries with design tokens, building <b>SSR/SSG with Next.js</b>, and reaching <b>80%+ test coverage</b>
+            on critical modules. Mentor 2 juniors, lead reviews, and partner closely with UI/UX in Agile sprints.
           </p>
           <ul class="exp-bullets">
             <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg><span><b>Led CRA → Vite migration</b>, cutting build time ~75% and CI spend.</span></li>
@@ -805,9 +839,9 @@
           VISAKHAPATNAM
         </div>
         <div>
-          <h3 class="exp-role">B.Tech</h3>
+          <h3 class="exp-role">B.Tech · Mechanical Engineering</h3>
           <span class="exp-co">Chaitanya Engineering College · JNTU-K</span>
-          <p style="color:var(--ink-dim);font-size:15px;margin:8px 0 0">Graduated 2022.</p>
+          <p style="color:var(--ink-dim);font-size:15px;margin:8px 0 0">Graduated 2022. Self-taught into frontend during final year.</p>
         </div>
       </div>
     </div>
@@ -823,11 +857,11 @@
         <div class="l">less feature<br/>dev effort</div>
       </div>
       <div class="metric">
-        <div class="v lime">4</div>
+        <div class="v lime">5</div>
         <div class="l">production apps<br/>shipped &amp; maintained</div>
       </div>
       <div class="metric">
-        <div class="v">1K<span style="font-size:.6em">+</span></div>
+        <div class="v">1.2K<span style="font-size:.6em">+</span></div>
         <div class="l">daily payment events<br/>powered by Addpay UI</div>
       </div>
     </div>
@@ -939,8 +973,8 @@
   <div class="container">
     <div class="eyebrow" style="justify-content:center">// LET&rsquo;S WORK TOGETHER</div>
     <h2>Have a hard<br/><span class="it">frontend problem?</span></h2>
-    <a class="mail-cta" href="/cdn-cgi/l/email-protection#452e6b2e30362d2429362c2b222d75717570052228242c296b262a28">
-      <span class="__cf_email__" data-cfemail="91fabffae4e2f9f0fde2f8fff6f9a1a5a1a4d1f6fcf0f8fdbff2fefc">[email&#160;protected]</span>
+    <a class="mail-cta" href="mailto:k.kushalsingh0405@gmail.com">
+      k.kushalsingh0405@gmail.com
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
     </a>
     <div class="contact-links">
@@ -960,8 +994,9 @@
 <footer>
   <div class="container" style="display:flex;justify-content:space-between;padding:0 32px">
     <span>© 2026 · Kushal Sai Singh</span>
+    <span>Last updated May 2026 · v2.1</span>
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</body>
 </html>
